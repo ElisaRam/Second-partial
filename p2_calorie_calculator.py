@@ -12,7 +12,5 @@ elif activity == "cycling":
     calories_burned = 0.035 * weight_kg * duration_minutes
 else:
     print("Invalid activity. Try again.")
-    calories_burned = None
 
-if calories_burned is not None:
-    print(f"You burned approximately {calories_burned} calories while {activity}.")
+print("The calories you burned are:",calories_burned)
