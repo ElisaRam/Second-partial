@@ -1,22 +1,30 @@
-#https://replit.com/join/eyrdhbkcst-elisaramirez4
+#https://replit.com/join/cpcuismbei-elisaramirez4
 
-("Enter the quantity:")
-quantity = int(input())
-print("Enter the unit of origin (miles, liters or fahrenheit):")
-origin = input()
-print("Enter the unit of destination (kilometers, gallons or celsius):")
-destination = input()
+print("Enter the price of the product:")
+ogprice = float(input())
+print("Enter the category (A, B, C):")
+category = input()
+print("Enter the number of units purchased:")
+units = float(input())
 
-if origin == "miles" and destination == "kilometers":
-  result = quantity * 1.609344
+if category == "A":
+  discount = .10
 
-elif origin == "liters" and destination == "gallons":
-  result = quantity * 0.264172
+elif category == "B":
+  discount = .05
 
-elif origin == "fahrenheit" and destination == "celsius":
-  result = (quantity - 32) * 5/9
-  
+elif category == "C":
+  discount = .02
+
 else:
-  print("Invalid answer, make sure you write it the same way as the ones in the options")
-    
-print(quantity, origin, "is", result, destination)
+  print("Invalid category")
+
+if units > 10:
+  discount = discount + 0.05
+  print("The additional discount would be a 5% since you bought more than 10 units")
+
+print("The price per product before the discount is",ogprice)
+print("The discount applied would be:",discount)
+
+price = ogprice - (ogprice * discount)
+print("The price per product with discount included is:",price)
